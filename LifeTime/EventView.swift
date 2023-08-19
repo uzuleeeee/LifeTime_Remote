@@ -17,8 +17,12 @@ struct EventView: View {
             if (event.name?.count != 0) {
                 Text(event.name ?? "Name")
             }
+            Text("Start time:")
             Text((event.startDate ?? Date()).formatted(date: .abbreviated, time: .shortened))
+                .padding(.leading)
+            Text("End time:")
             Text((event.endDate ?? Date()).formatted(date: .abbreviated, time: .shortened))
+                .padding(.leading)
         }
     }
 }

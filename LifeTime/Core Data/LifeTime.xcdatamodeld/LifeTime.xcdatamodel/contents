@@ -6,5 +6,11 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="startDate"/>
+                <constraint value="endDate"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

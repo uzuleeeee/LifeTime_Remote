@@ -43,8 +43,10 @@ struct StartEventView: View {
                         newEvent.startDate = Date()
                         newEvent.endDate = Date()
                         
-                        try? moc.save()
-                        dismiss()
+                        if moc.hasChanges {
+                            try? moc.save()
+                            dismiss()
+                        }
                     }
                 }
             }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RecordView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var events: FetchedResults<Event>
     
     @State private var isShowingStartEventView: Bool = false
     
@@ -31,15 +30,6 @@ struct RecordView: View {
                 }
             }
             .listRowBackground(Color.blue)
-            
-            Section("Past Events") {
-                List {
-                    ForEach (events) { event in
-                        EventView(event: event)
-                        
-                    }
-                }
-            }
         }
         .sheet(isPresented: $isShowingStartEventView) {
             StartEventView()

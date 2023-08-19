@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var events: FetchedResults<Event>
     
     var body: some View {
         TabView {
@@ -17,7 +16,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Record", systemImage: "timer")
                 }
-            Text("Analyze")
+            AnalyzeView()
                 .tabItem {
                     Label("Analyze", systemImage: "chart.line.uptrend.xyaxis")
                 }

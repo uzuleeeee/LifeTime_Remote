@@ -11,23 +11,28 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var events: FetchedResults<Event>
     
-    @State private var isShowingAddEventView: Bool = false
+    @State private var isShowingStartEventView: Bool = false
     
     var body: some View {
         NavigationView {
-            Text("Count: \(events.count)")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            isShowingAddEventView.toggle()
-                        } label: {
-                            Label("Add Event", systemImage: "plus")
-                        }
+            List {
+                ForEach (events) { event in
+                    EventView(event: event)
+                    
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isShowingStartEventView.toggle()
+                    } label: {
+                        Label("Add Event", systemImage: "plus")
                     }
                 }
-                .sheet(isPresented: $isShowingAddEventView) {
-                    AddEventView()
-                }
+            }
+            .sheet(isPresented: $isShowingStartEventView) {
+                StartEventView()
+            }
         }
     }
 }

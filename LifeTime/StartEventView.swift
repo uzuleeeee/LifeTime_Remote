@@ -1,5 +1,5 @@
 //
-//  AddEventView.swift
+//  StartEventView.swift
 //  LifeTime
 //
 //  Created by Mac-aroni on 8/18/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddEventView: View {
+struct StartEventView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
@@ -23,7 +23,6 @@ struct AddEventView: View {
             Form {
                 Section {
                     Picker("Category", selection: $category) {
-                        Text("").tag("")
                         ForEach(categories, id: \.self) {
                             Text($0)
                         }
@@ -32,7 +31,7 @@ struct AddEventView: View {
                 }
                 
                 Section {
-                    Button("Save") {
+                    Button("Start") {
                         let newEvent = Event(context: moc)
                         newEvent.id = UUID()
                         newEvent.category = category
@@ -45,13 +44,14 @@ struct AddEventView: View {
                     }
                 }
             }
-            .navigationTitle("Add Event")
+            .navigationTitle("New Event")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 struct AddEventView_Previews: PreviewProvider {
     static var previews: some View {
-        AddEventView()
+        StartEventView()
     }
 }

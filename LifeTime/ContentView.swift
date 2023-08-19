@@ -11,28 +11,16 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var events: FetchedResults<Event>
     
-    @State private var isShowingStartEventView: Bool = false
-    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach (events) { event in
-                    EventView(event: event)
-                    
+        TabView {
+            RecordView()
+                .tabItem {
+                    Label("Record", systemImage: "timer")
                 }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        isShowingStartEventView.toggle()
-                    } label: {
-                        Label("Add Event", systemImage: "plus")
-                    }
+            Text("Analyze")
+                .tabItem {
+                    Label("Analyze", systemImage: "chart.line.uptrend.xyaxis")
                 }
-            }
-            .sheet(isPresented: $isShowingStartEventView) {
-                StartEventView()
-            }
         }
     }
 }

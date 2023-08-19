@@ -15,6 +15,7 @@
 		4A8560192A8F4FBD008219C5 /* StartEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560182A8F4FBD008219C5 /* StartEventView.swift */; };
 		4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A85601A2A8F4FDA008219C5 /* LifeTime.xcdatamodeld */; };
 		4AC28C732A90678700A88B1A /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C722A90678700A88B1A /* EventView.swift */; };
+		4AC28C752A909E6C00A88B1A /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C742A909E6C00A88B1A /* RecordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		4A8560182A8F4FBD008219C5 /* StartEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEventView.swift; sourceTree = "<group>"; };
 		4A85601B2A8F4FDA008219C5 /* LifeTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeTime.xcdatamodel; sourceTree = "<group>"; };
 		4AC28C722A90678700A88B1A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		4AC28C742A909E6C00A88B1A /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */,
 				4A85600A2A8F4F56008219C5 /* ContentView.swift */,
+				4AC28C742A909E6C00A88B1A /* RecordView.swift */,
 				4AC28C722A90678700A88B1A /* EventView.swift */,
 				4A8560182A8F4FBD008219C5 /* StartEventView.swift */,
 				4A8560162A8F4FA9008219C5 /* DataController.swift */,
@@ -152,6 +155,7 @@
 				4A85600B2A8F4F56008219C5 /* ContentView.swift in Sources */,
 				4A8560172A8F4FA9008219C5 /* DataController.swift in Sources */,
 				4A8560092A8F4F56008219C5 /* LifeTimeApp.swift in Sources */,
+				4AC28C752A909E6C00A88B1A /* RecordView.swift in Sources */,
 				4AC28C732A90678700A88B1A /* EventView.swift in Sources */,
 				4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */,
 				4A8560192A8F4FBD008219C5 /* StartEventView.swift in Sources */,

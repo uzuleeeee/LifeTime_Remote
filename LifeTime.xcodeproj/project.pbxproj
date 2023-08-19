@@ -11,6 +11,9 @@
 		4A85600B2A8F4F56008219C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85600A2A8F4F56008219C5 /* ContentView.swift */; };
 		4A85600D2A8F4F57008219C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85600C2A8F4F57008219C5 /* Assets.xcassets */; };
 		4A8560102A8F4F57008219C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85600F2A8F4F57008219C5 /* Preview Assets.xcassets */; };
+		4A8560172A8F4FA9008219C5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560162A8F4FA9008219C5 /* DataController.swift */; };
+		4A8560192A8F4FBD008219C5 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560182A8F4FBD008219C5 /* AddEventView.swift */; };
+		4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A85601A2A8F4FDA008219C5 /* LifeTime.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		4A85600A2A8F4F56008219C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A85600C2A8F4F57008219C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A85600F2A8F4F57008219C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A8560162A8F4FA9008219C5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		4A8560182A8F4FBD008219C5 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		4A85601B2A8F4FDA008219C5 /* LifeTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeTime.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */,
+				4A8560162A8F4FA9008219C5 /* DataController.swift */,
+				4A8560182A8F4FBD008219C5 /* AddEventView.swift */,
 				4A85600A2A8F4F56008219C5 /* ContentView.swift */,
+				4A85601A2A8F4FDA008219C5 /* LifeTime.xcdatamodeld */,
 				4A85600C2A8F4F57008219C5 /* Assets.xcassets */,
 				4A85600E2A8F4F57008219C5 /* Preview Content */,
 			);
@@ -138,7 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A85600B2A8F4F56008219C5 /* ContentView.swift in Sources */,
+				4A8560172A8F4FA9008219C5 /* DataController.swift in Sources */,
 				4A8560092A8F4F56008219C5 /* LifeTimeApp.swift in Sources */,
+				4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */,
+				4A8560192A8F4FBD008219C5 /* AddEventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +351,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A85601A2A8F4FDA008219C5 /* LifeTime.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A85601B2A8F4FDA008219C5 /* LifeTime.xcdatamodel */,
+			);
+			currentVersion = 4A85601B2A8F4FDA008219C5 /* LifeTime.xcdatamodel */;
+			path = LifeTime.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A855FFD2A8F4F56008219C5 /* Project object */;
 }

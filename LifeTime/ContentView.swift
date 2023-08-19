@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var events: FetchedResults<Event>
+    
+    @State private var isShowingAddEventView: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            Text("Count: \(events.count)")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isShowingAddEventView.toggle()
+                        } label: {
+                            Label("Add Event", systemImage: "plus")
+                        }
+                    }
+                }
+                .sheet(isPresented: $isShowingAddEventView) {
+                    AddEventView()
+                }
         }
-        .padding()
     }
 }
 

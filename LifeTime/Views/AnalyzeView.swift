@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AnalyzeView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var events: FetchedResults<Event>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var events: FetchedResults<Event>
     
     var body: some View {
         Form {

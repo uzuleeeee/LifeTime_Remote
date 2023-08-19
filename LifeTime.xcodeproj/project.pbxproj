@@ -17,6 +17,7 @@
 		4AC28C732A90678700A88B1A /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C722A90678700A88B1A /* EventView.swift */; };
 		4AC28C752A909E6C00A88B1A /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C742A909E6C00A88B1A /* RecordView.swift */; };
 		4AC28C772A90A72B00A88B1A /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */; };
+		4AC28C792A90DDE100A88B1A /* CurrentEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C782A90DDE100A88B1A /* CurrentEventView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4AC28C722A90678700A88B1A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		4AC28C742A909E6C00A88B1A /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
+		4AC28C782A90DDE100A88B1A /* CurrentEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */,
 				4A85600A2A8F4F56008219C5 /* ContentView.swift */,
 				4AC28C742A909E6C00A88B1A /* RecordView.swift */,
+				4AC28C782A90DDE100A88B1A /* CurrentEventView.swift */,
 				4AC28C722A90678700A88B1A /* EventView.swift */,
 				4A8560182A8F4FBD008219C5 /* StartEventView.swift */,
 				4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */,
@@ -163,6 +166,7 @@
 				4AC28C732A90678700A88B1A /* EventView.swift in Sources */,
 				4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */,
 				4A8560192A8F4FBD008219C5 /* StartEventView.swift in Sources */,
+				4AC28C792A90DDE100A88B1A /* CurrentEventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,8 @@ struct RecordView: View {
     var body: some View {
         Form {
             Section("Current Event") {
+                //CurrentEventView(event: Event())
+                
                 Button {
                     isShowingStartEventView.toggle()
                 } label: {

@@ -37,6 +37,10 @@ extension Event {
     public var wrappedEndDate: Date {
         endDate ?? Date(timeIntervalSinceReferenceDate: 0)
     }
+    
+    public var hasName: Bool {
+        wrappedName.count != 0
+    }
 }
 
 extension Event : Identifiable {

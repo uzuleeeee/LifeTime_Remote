@@ -14,7 +14,7 @@ struct EventView: View {
         VStack(alignment: .leading) {
             Text(event.wrappedCategory)
                 .font(.headline)
-            if (event.name?.count != 0) {
+            if (event.hasName) {
                 Text(event.wrappedName)
             }
             Text("Start time:")

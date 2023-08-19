@@ -12,16 +12,16 @@ struct EventView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(event.category ?? "Category")
+            Text(event.wrappedCategory)
                 .font(.headline)
             if (event.name?.count != 0) {
-                Text(event.name ?? "Name")
+                Text(event.wrappedName)
             }
             Text("Start time:")
-            Text((event.startDate ?? Date()).formatted(date: .abbreviated, time: .shortened))
+            Text(event.wrappedStartDate.formatted(date: .abbreviated, time: .shortened))
                 .padding(.leading)
             Text("End time:")
-            Text((event.endDate ?? Date()).formatted(date: .abbreviated, time: .shortened))
+            Text(event.wrappedEndDate.formatted(date: .abbreviated, time: .shortened))
                 .padding(.leading)
         }
     }

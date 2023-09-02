@@ -16,19 +16,7 @@ struct RecordView: View {
     var body: some View {
         Form {
             Section("Current Event") {
-                Button {
-                    isShowingStartEventView.toggle()
-                } label: {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "plus")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                            .padding()
-                            .foregroundColor(.white)
-                        Spacer()
-                    }
-                }
+                CurrentEventView(plusButtonAction: showStartEventView)
             }
             .listRowBackground(Color.blue)
             
@@ -57,6 +45,10 @@ struct RecordView: View {
                 try? moc.save()
             }
         }
+    }
+    
+    func showStartEventView() {
+        isShowingStartEventView = true
     }
 }
 

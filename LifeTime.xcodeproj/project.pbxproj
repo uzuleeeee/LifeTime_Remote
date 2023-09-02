@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A5B66BC2AA3E38400338463 /* CurrentEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B66BB2AA3E38400338463 /* CurrentEventView.swift */; };
 		4A8560092A8F4F56008219C5 /* LifeTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */; };
 		4A85600B2A8F4F56008219C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85600A2A8F4F56008219C5 /* ContentView.swift */; };
 		4A85600D2A8F4F57008219C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85600C2A8F4F57008219C5 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A5B66BB2AA3E38400338463 /* CurrentEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventView.swift; sourceTree = "<group>"; };
 		4A8560052A8F4F56008219C5 /* LifeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeApp.swift; sourceTree = "<group>"; };
 		4A85600A2A8F4F56008219C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				4A85600A2A8F4F56008219C5 /* ContentView.swift */,
 				4AC28C742A909E6C00A88B1A /* RecordView.swift */,
+				4A5B66BB2AA3E38400338463 /* CurrentEventView.swift */,
 				4AC28C722A90678700A88B1A /* EventView.swift */,
 				4A8560182A8F4FBD008219C5 /* StartEventView.swift */,
 				4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */,
@@ -203,6 +206,7 @@
 				4AD00FC42A9BE5A300C5CD3C /* Event+CoreDataProperties.swift in Sources */,
 				4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */,
 				4AD00FC52A9BE5A300C5CD3C /* Category+CoreDataClass.swift in Sources */,
+				4A5B66BC2AA3E38400338463 /* CurrentEventView.swift in Sources */,
 				4A8560192A8F4FBD008219C5 /* StartEventView.swift in Sources */,
 				4AD00FC62A9BE5A300C5CD3C /* Category+CoreDataProperties.swift in Sources */,
 			);

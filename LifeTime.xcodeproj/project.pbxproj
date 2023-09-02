@@ -32,6 +32,7 @@
 		4A8560162A8F4FA9008219C5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4A8560182A8F4FBD008219C5 /* StartEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEventView.swift; sourceTree = "<group>"; };
 		4A85601B2A8F4FDA008219C5 /* LifeTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeTime.xcdatamodel; sourceTree = "<group>"; };
+		4AB41BC12AA3E12900A59FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4AC28C722A90678700A88B1A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		4AC28C742A909E6C00A88B1A /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		4A8560072A8F4F56008219C5 /* LifeTime */ = {
 			isa = PBXGroup;
 			children = (
+				4AB41BC12AA3E12900A59FCC /* Info.plist */,
 				4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */,
 				4AC28C7F2A90FA8C00A88B1A /* Views */,
 				4AC28C802A90FAA200A88B1A /* Models */,
@@ -334,7 +336,7 @@
 				DEVELOPMENT_TEAM = 2BS6P7FL7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = LifeTime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -363,7 +365,7 @@
 				DEVELOPMENT_TEAM = 2BS6P7FL7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = LifeTime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

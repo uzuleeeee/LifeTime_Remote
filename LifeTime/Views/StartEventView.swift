@@ -9,22 +9,26 @@ import SwiftUI
 
 struct StartEventView: View {
     @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<Category>
+    
     @Environment(\.dismiss) var dismiss
     
-    @State private var category: String = ""
+    @State private var selectedCategory: Category?
     @State private var name: String = ""
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Date()
-    
-    let categories: [String] = ["Entertainment", "Education", "Sleep", "Eating", "Transportation"]
-    
+
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Picker("Category", selection: $category) {
-                        ForEach(categories, id: \.self) {
-                            Text($0)
+                    Picker("Category", selection: $selectedCategory) {
+                        ForEach(categories) { category in
+                            Text(category.wrappedName)
+                                .tag(Optional(category))
+                        }
+                        .onAppear {
+                            selectedCategory = categories[0]
                         }
                     }
                     TextField("Name of event", text: $name)
@@ -34,11 +38,8 @@ struct StartEventView: View {
                     Button("Start") {
                         let newEvent = Event(context: moc)
                         newEvent.id = UUID()
-                        if (category.count == 0) {
-                            newEvent.category = categories[0]
-                        } else {
-                            newEvent.category = category
-                        }
+                        newEvent.category = Category(context: moc)
+                        newEvent.category?.name = selectedCategory?.wrappedName
                         newEvent.name = name
                         newEvent.startDate = Date()
                         newEvent.endDate = Date()
@@ -48,6 +49,7 @@ struct StartEventView: View {
                             dismiss()
                         }
                     }
+                    .disabled(selectedCategory == nil)
                 }
             }
             .navigationTitle("New Event")

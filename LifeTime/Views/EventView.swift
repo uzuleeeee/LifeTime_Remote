@@ -12,7 +12,7 @@ struct EventView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(event.wrappedCategory)
+            Text(event.category?.wrappedName ?? "Unknown Wrapped Name")
                 .font(.headline)
             if (event.hasName) {
                 Text(event.wrappedName)

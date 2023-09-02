@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.swift
 //  LifeTime
 //
-//  Created by Mac-aroni on 8/19/23.
+//  Created by Mac-aroni on 8/27/23.
 //
 //
 
@@ -21,7 +21,7 @@ extension Event {
     @NSManaged public var name: String?
     @NSManaged public var startDate: Date?
     @NSManaged public var category: Category?
-    
+
     public var wrappedName: String {
         name ?? "Unknown Name"
     }

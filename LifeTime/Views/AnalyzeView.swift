@@ -10,15 +10,23 @@ import SwiftUI
 struct AnalyzeView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var events: FetchedResults<Event>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<Category>
     
     var body: some View {
         Form {
-            Section("Past Events") {
-                List {
-                    ForEach (events) { event in
-                        EventView(event: event)
+            List {
+                ForEach(categories) { category in
+                    Section(category.wrappedName) {
+                        ForEach(category.eventArray) { event in
+                            Text(event.wrappedName)
+                        }
                     }
                 }
+                /*
+                ForEach (events) { event in
+                    EventView(event: event)
+                }
+                */
             }
         }
     }

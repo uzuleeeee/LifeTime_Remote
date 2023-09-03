@@ -20,6 +20,7 @@ extension Event {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var startDate: Date?
+    @NSManaged public var ended: Bool
     @NSManaged public var category: Category?
 
     public var wrappedName: String {

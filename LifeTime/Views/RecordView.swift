@@ -18,7 +18,6 @@ struct RecordView: View {
             Section("Current Event") {
                 CurrentEventView(plusButtonAction: showStartEventView)
             }
-            .listRowBackground(Color.blue)
             
             Section("Categories") {
                 List {

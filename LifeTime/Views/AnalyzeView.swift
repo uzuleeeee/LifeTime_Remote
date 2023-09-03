@@ -18,7 +18,10 @@ struct AnalyzeView: View {
                 ForEach(categories) { category in
                     Section(category.wrappedName) {
                         ForEach(category.eventArray) { event in
-                            Text(event.wrappedName)
+                            HStack {
+                                Text(event.wrappedName)
+                                Text(event.ended ? "ended" : "not ended")
+                            }
                         }
                     }
                 }

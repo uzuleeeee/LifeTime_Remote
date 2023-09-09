@@ -35,7 +35,7 @@ struct StartEventView: View {
                 }
                 
                 Section {
-                    Button("Start") {
+                    Button {
                         let newEvent = Event(context: moc)
                         newEvent.id = UUID()
                         newEvent.category = Category(context: moc)
@@ -48,8 +48,17 @@ struct StartEventView: View {
                             try? moc.save()
                             dismiss()
                         }
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "plus")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
                     }
                     .disabled(selectedCategory == nil)
+                    .listRowBackground(Color.blue)
                 }
             }
             .navigationTitle("New Event")

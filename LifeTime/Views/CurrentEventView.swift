@@ -15,20 +15,22 @@ struct CurrentEventView: View {
     
     var body: some View {
         if (events[0].ended == true) {
-            Button(action: plusButtonAction) {
-                HStack {
-                    Spacer()
-                    Image(systemName: "plus")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .padding()
-                        .foregroundColor(.white)
-                    Spacer()
+            Section("Current Event") {
+                Button(action: plusButtonAction) {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "plus")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .padding()
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
                 }
+                .listRowBackground(Color.blue)
             }
-            .listRowBackground(Color.blue)
         } else {
-            Section {
+            Section("Current Event") {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(events[0].category?.wrappedName ?? "Unknown Name (Category DNE)")
@@ -49,7 +51,9 @@ struct CurrentEventView: View {
                         }
                     }
                 }
-                    
+            }
+            
+            Section {
                 Button {
                     events[0].ended = true
                     events[0].endDate = Date()

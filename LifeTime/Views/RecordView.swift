@@ -14,34 +14,34 @@ struct RecordView: View {
     @State private var isShowingStartEventView: Bool = false
     
     var body: some View {
-        Form {
-            Section("Current Event") {
+        VStack {
+            Form {
                 CurrentEventView(plusButtonAction: showStartEventView)
-            }
-            
-            Section("Categories") {
-                List {
-                    ForEach(categories, id: \.self) { category in
-                        Text(category.wrappedName)
+                
+                Section("Categories") {
+                    List {
+                        ForEach(categories, id: \.self) { category in
+                            Text(category.wrappedName)
+                        }
                     }
                 }
             }
-        }
-        .sheet(isPresented: $isShowingStartEventView) {
-            StartEventView()
-        }
-        .onAppear {
-            let newCategory = Category(context: moc)
-            newCategory.name = "Entertainment"
-            
-            let newCategory2 = Category(context: moc)
-            newCategory2.name = "Study"
-            
-            let newCategory3 = Category(context: moc)
-            newCategory3.name = "Sleep"
-            
-            if moc.hasChanges {
-                try? moc.save()
+            .sheet(isPresented: $isShowingStartEventView) {
+                StartEventView()
+            }
+            .onAppear {
+                let newCategory = Category(context: moc)
+                newCategory.name = "Entertainment"
+                
+                let newCategory2 = Category(context: moc)
+                newCategory2.name = "Study"
+                
+                let newCategory3 = Category(context: moc)
+                newCategory3.name = "Sleep"
+                
+                if moc.hasChanges {
+                    try? moc.save()
+                }
             }
         }
     }

@@ -28,16 +28,47 @@ struct CurrentEventView: View {
             }
             .listRowBackground(Color.blue)
         } else {
-            VStack {
-                Text(events[0].category?.wrappedName ?? "Unknown Name (Category DNE)")
-                
-                Button("End Event") {
-                    events[0].ended = true
-                    
-                    if moc.hasChanges {
-                        try? moc.save()
+            Section {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(events[0].category?.wrappedName ?? "Unknown Name (Category DNE)")
+                            .font(.title3)
+                            .bold()
+                        Text(events[0].hasName ? events[0].wrappedName : " ")
                     }
-                }  
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .trailing) {
+                        Text(events[0].wrappedStartDate, style: .timer)
+                            .font(.largeTitle)
+                        
+                        HStack(spacing: 0) {
+                            Text("Started at ")
+                            Text(events[0].wrappedStartDate, style: .time)
+                        }
+                    }
+                }
+                    
+                Button {
+                    events[0].ended = true
+                    events[0].endDate = Date()
+                    
+                    withAnimation {
+                        if moc.hasChanges {
+                            try? moc.save()
+                        }
+                    }
+                } label: {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "xmark")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                }
+                .listRowBackground(Color.red)
             }
         }
     }

@@ -21,15 +21,22 @@ struct AnalyzeView: View {
                             HStack {
                                 Text(event.wrappedName)
                                 Text(event.ended ? "ended" : "not ended")
+                                Text(event.wrappedStartDate, style: .time)
+                                Text(event.wrappedEndDate, style: .time)
                             }
                         }
                     }
                 }
                 /*
-                ForEach (events) { event in
-                    EventView(event: event)
-                }
-                */
+                 ForEach (events) { event in
+                 EventView(event: event)
+                 }
+                 */
+            }
+        }
+        .onAppear {
+            if moc.hasChanges {
+                try? moc.save()
             }
         }
     }

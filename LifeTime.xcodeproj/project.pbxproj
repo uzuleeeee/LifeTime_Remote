@@ -22,6 +22,7 @@
 		4AD00FC42A9BE5A300C5CD3C /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FC02A9BE5A300C5CD3C /* Event+CoreDataProperties.swift */; };
 		4AD00FC52A9BE5A300C5CD3C /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FC12A9BE5A300C5CD3C /* Category+CoreDataClass.swift */; };
 		4AD00FC62A9BE5A300C5CD3C /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FC22A9BE5A300C5CD3C /* Category+CoreDataProperties.swift */; };
+		4AE8B4562B63B6480075FA5B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8B4552B63B6480075FA5B /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4AD00FC02A9BE5A300C5CD3C /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "../Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4AD00FC12A9BE5A300C5CD3C /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "../Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4AD00FC22A9BE5A300C5CD3C /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4AE8B4552B63B6480075FA5B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				4A85600A2A8F4F56008219C5 /* ContentView.swift */,
 				4AC28C742A909E6C00A88B1A /* RecordView.swift */,
+				4AE8B4552B63B6480075FA5B /* CategoryView.swift */,
 				4A5B66BB2AA3E38400338463 /* CurrentEventView.swift */,
 				4AC28C722A90678700A88B1A /* EventView.swift */,
 				4A8560182A8F4FBD008219C5 /* StartEventView.swift */,
@@ -204,6 +207,7 @@
 				4AC28C752A909E6C00A88B1A /* RecordView.swift in Sources */,
 				4AC28C732A90678700A88B1A /* EventView.swift in Sources */,
 				4AD00FC42A9BE5A300C5CD3C /* Event+CoreDataProperties.swift in Sources */,
+				4AE8B4562B63B6480075FA5B /* CategoryView.swift in Sources */,
 				4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */,
 				4AD00FC52A9BE5A300C5CD3C /* Category+CoreDataClass.swift in Sources */,
 				4A5B66BC2AA3E38400338463 /* CurrentEventView.swift in Sources */,

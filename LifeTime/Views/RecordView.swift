@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RecordView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<Category>
     
     @State private var isShowingStartEventView: Bool = false
     
@@ -17,14 +16,7 @@ struct RecordView: View {
         VStack {
             Form {
                 CurrentEventView(plusButtonAction: showStartEventView)
-                
-                Section("Categories") {
-                    List {
-                        ForEach(categories, id: \.self) { category in
-                            Text(category.wrappedName)
-                        }
-                    }
-                }
+                CategoryView()
             }
             .sheet(isPresented: $isShowingStartEventView) {
                 StartEventView()

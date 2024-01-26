@@ -14,7 +14,8 @@ struct CurrentEventView: View {
     let plusButtonAction: ()->Void
     
     var body: some View {
-        if (events[0].ended == true) {
+        if (events.isEmpty || events[0].ended == true) {
+            // No event in progress
             Section("Current Event") {
                 Button(action: plusButtonAction) {
                     HStack {
@@ -30,6 +31,7 @@ struct CurrentEventView: View {
                 .listRowBackground(Color.blue)
             }
         } else {
+            // Event in progress
             Section("Current Event") {
                 HStack {
                     VStack(alignment: .leading) {

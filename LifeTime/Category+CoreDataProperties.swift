@@ -18,7 +18,7 @@ extension Category {
 
     @NSManaged public var name: String?
     @NSManaged public var symbolName: String?
-    @NSManaged public var totalTime: Int16
+    @NSManaged public var totalTime: Int32
     @NSManaged public var event: NSSet?
 
     public var wrappedName: String {

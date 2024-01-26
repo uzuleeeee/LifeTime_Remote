@@ -59,7 +59,7 @@ struct CurrentEventView: View {
                 Button {
                     events[0].ended = true
                     events[0].endDate = Date()
-                    events[0].category?.totalTime += Int16(Date().timeIntervalSince(events[0].wrappedStartDate))
+                    events[0].category?.totalTime += Int32(Date().timeIntervalSince(events[0].wrappedStartDate))
                     
                     withAnimation {
                         DataController().save(context: moc)

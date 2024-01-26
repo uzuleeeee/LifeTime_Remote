@@ -19,7 +19,7 @@ extension Category {
     @NSManaged public var name: String?
     @NSManaged public var symbolName: String?
     @NSManaged public var totalTime: Int32
-    @NSManaged public var event: NSSet?
+    @NSManaged public var activity: NSSet?
 
     public var wrappedName: String {
         name ?? "Unknown Name"
@@ -29,35 +29,29 @@ extension Category {
         symbolName ?? "Unknown Symbol"
     }
     
-    public var eventArray: [Event] {
-        let set = event as? Set<Event> ?? []
+    public var activityArray: [Activity] {
+        let set = activity as? Set<Activity> ?? []
         
         return set.sorted {
             $0.wrappedStartDate < $1.wrappedStartDate
         }
     }
-    
-    /*
-    public var totalTime: Int {
-        Int(eventArray.reduce(0, { $0 + $1.wrappedEndDate.timeIntervalSince($1.wrappedStartDate) }))
-    }
-     */
 }
 
-// MARK: Generated accessors for event
+// MARK: Generated accessors for activity
 extension Category {
 
-    @objc(addEventObject:)
-    @NSManaged public func addToEvent(_ value: Event)
+    @objc(addActivityObject:)
+    @NSManaged public func addToActivity(_ value: Activity)
 
-    @objc(removeEventObject:)
-    @NSManaged public func removeFromEvent(_ value: Event)
+    @objc(removeActivityObject:)
+    @NSManaged public func removeFromActivity(_ value: Activity)
 
-    @objc(addEvent:)
-    @NSManaged public func addToEvent(_ values: NSSet)
+    @objc(addActivity:)
+    @NSManaged public func addToActivity(_ values: NSSet)
 
-    @objc(removeEvent:)
-    @NSManaged public func removeFromEvent(_ values: NSSet)
+    @objc(removeActivity:)
+    @NSManaged public func removeFromActivity(_ values: NSSet)
 
 }
 

@@ -30,14 +30,14 @@ class DataController: ObservableObject {
         }
     }
     
-    func addEvent(name: String, selectedCategory: Category?, context: NSManagedObjectContext) {
-        let newEvent = Event(context: context)
-        newEvent.id = UUID()
-        newEvent.category = selectedCategory
-        newEvent.category?.name = selectedCategory?.wrappedName
-        newEvent.name = name
-        newEvent.startDate = Date()
-        newEvent.endDate = Date()
+    func addActivity(name: String, selectedCategory: Category?, context: NSManagedObjectContext) {
+        let newActivity = Activity(context: context)
+        newActivity.id = UUID()
+        newActivity.category = selectedCategory
+        newActivity.category?.name = selectedCategory?.wrappedName
+        newActivity.name = name
+        newActivity.startDate = Date()
+        newActivity.endDate = Date()
         
         save(context: context)
     }

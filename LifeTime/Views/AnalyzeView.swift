@@ -10,7 +10,7 @@ import Charts
 
 struct AnalyzeView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var events: FetchedResults<Event>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var activities: FetchedResults<Activity>
     @FetchRequest(sortDescriptors: [SortDescriptor(\.totalTime, order: .reverse)]) var categories: FetchedResults<Category>
     
     var body: some View {

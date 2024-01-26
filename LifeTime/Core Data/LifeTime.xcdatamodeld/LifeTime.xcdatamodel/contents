@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Category" representedClassName="Category" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="symbolName" optional="YES" attributeType="String"/>
-        <attribute name="totalTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="event" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="category" inverseEntity="Event"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="name"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
-    </entity>
-    <entity name="Event" representedClassName="Event" syncable="YES">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="ended" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="event" inverseEntity="Category"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="activity" inverseEntity="Category"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="startDate"/>
                 <constraint value="endDate"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="symbolName" optional="YES" attributeType="String"/>
+        <attribute name="totalTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="category" inverseEntity="Activity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>

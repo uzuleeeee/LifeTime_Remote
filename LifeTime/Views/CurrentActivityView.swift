@@ -1,5 +1,5 @@
 //
-//  CurrentEventView.swift
+//  CurrentActivityView.swift
 //  LifeTime
 //
 //  Created by Mac-aroni on 9/2/23.
@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct CurrentEventView: View {
+struct CurrentActivityView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var events: FetchedResults<Event>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var activities: FetchedResults<Activity>
     
     let plusButtonAction: ()->Void
     
     var body: some View {
-        if (events.isEmpty || events[0].ended == true) {
-            // No event in progress
-            Section("Current Event") {
+        if (activities.isEmpty || activities[0].ended == true) {
+            // No activity in progress
+            Section("Current Activity") {
                 Button(action: plusButtonAction) {
                     HStack {
                         Spacer()
@@ -31,25 +31,25 @@ struct CurrentEventView: View {
                 .listRowBackground(Color.blue)
             }
         } else {
-            // Event in progress
-            Section("Current Event") {
+            // Activity in progress
+            Section("Current Activity") {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(events[0].category?.wrappedName ?? "Unknown Name (Category DNE)")
+                        Text(activities[0].category?.wrappedName ?? "Unknown Name (Category DNE)")
                             .font(.title3)
                             .bold()
-                        Text(events[0].hasName ? events[0].wrappedName : " ")
+                        Text(activities[0].hasName ? activities[0].wrappedName : " ")
                     }
                     
                     Spacer()
                     
                     VStack(alignment: .trailing) {
-                        Text(events[0].wrappedStartDate, style: .timer)
+                        Text(activities[0].wrappedStartDate, style: .timer)
                             .font(.largeTitle)
                         
                         HStack(spacing: 0) {
                             Text("Started at ")
-                            Text(events[0].wrappedStartDate, style: .time)
+                            Text(activities[0].wrappedStartDate, style: .time)
                         }
                     }
                 }
@@ -57,9 +57,9 @@ struct CurrentEventView: View {
             
             Section {
                 Button {
-                    events[0].ended = true
-                    events[0].endDate = Date()
-                    events[0].category?.totalTime += Int32(Date().timeIntervalSince(events[0].wrappedStartDate))
+                    activities[0].ended = true
+                    activities[0].endDate = Date()
+                    activities[0].category?.totalTime += Int32(Date().timeIntervalSince(activities[0].wrappedStartDate))
                     
                     withAnimation {
                         DataController().save(context: moc)
@@ -79,8 +79,8 @@ struct CurrentEventView: View {
     }
 }
 
-struct CurrentEventView_Previews: PreviewProvider {
+struct CurrentActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentEventView(plusButtonAction: {})
+        CurrentActivityView(plusButtonAction: {})
     }
 }

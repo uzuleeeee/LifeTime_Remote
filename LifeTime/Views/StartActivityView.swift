@@ -1,5 +1,5 @@
 //
-//  StartEventView.swift
+//  StartActivityView.swift
 //  LifeTime
 //
 //  Created by Mac-aroni on 8/18/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StartEventView: View {
+struct StartActivityView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<Category>
     
@@ -31,12 +31,12 @@ struct StartEventView: View {
                             selectedCategory = categories[0]
                         }
                     }
-                    TextField("Name of event", text: $name)
+                    TextField("Name of activity", text: $name)
                 }
                 
                 Section {
                     Button {
-                        DataController().addEvent(name: name, selectedCategory: selectedCategory, context: moc)
+                        DataController().addActivity(name: name, selectedCategory: selectedCategory, context: moc)
                             
                         dismiss()
                     } label: {
@@ -52,14 +52,14 @@ struct StartEventView: View {
                     .listRowBackground(Color.blue)
                 }
             }
-            .navigationTitle("New Event")
+            .navigationTitle("New Activity")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
-struct AddEventView_Previews: PreviewProvider {
+struct AddActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        StartEventView()
+        StartActivityView()
     }
 }

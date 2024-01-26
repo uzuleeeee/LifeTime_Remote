@@ -1,5 +1,5 @@
 //
-//  Event+CoreDataProperties.swift
+//  Activity+CoreDataProperties.swift
 //  LifeTime
 //
 //  Created by Mac-aroni on 8/27/23.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Event {
+extension Activity {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Event> {
-        return NSFetchRequest<Event>(entityName: "Event")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Activity> {
+        return NSFetchRequest<Activity>(entityName: "Activity")
     }
 
     @NSManaged public var endDate: Date?
@@ -40,6 +40,6 @@ extension Event {
     }
 }
 
-extension Event : Identifiable {
+extension Activity : Identifiable {
 
 }

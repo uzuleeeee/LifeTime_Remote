@@ -10,22 +10,22 @@ import SwiftUI
 struct RecordView: View {
     @Environment(\.managedObjectContext) var moc
     
-    @State private var isShowingStartEventView: Bool = false
+    @State private var isShowingStartActivityView: Bool = false
     
     var body: some View {
         VStack {
             Form {
-                CurrentEventView(plusButtonAction: showStartEventView)
+                CurrentActivityView(plusButtonAction: showStartActivityView)
                 CategoryView()
             }
-            .sheet(isPresented: $isShowingStartEventView) {
-                StartEventView()
+            .sheet(isPresented: $isShowingStartActivityView) {
+                StartActivityView()
             }
         }
     }
     
-    func showStartEventView() {
-        isShowingStartEventView = true
+    func showStartActivityView() {
+        isShowingStartActivityView = true
     }
 }
 

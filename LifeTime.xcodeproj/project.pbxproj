@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A5B66BC2AA3E38400338463 /* CurrentEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B66BB2AA3E38400338463 /* CurrentEventView.swift */; };
+		4A5B66BC2AA3E38400338463 /* CurrentActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B66BB2AA3E38400338463 /* CurrentActivityView.swift */; };
 		4A8560092A8F4F56008219C5 /* LifeTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */; };
 		4A85600B2A8F4F56008219C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85600A2A8F4F56008219C5 /* ContentView.swift */; };
 		4A85600D2A8F4F57008219C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85600C2A8F4F57008219C5 /* Assets.xcassets */; };
 		4A8560102A8F4F57008219C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85600F2A8F4F57008219C5 /* Preview Assets.xcassets */; };
 		4A8560172A8F4FA9008219C5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560162A8F4FA9008219C5 /* DataController.swift */; };
-		4A8560192A8F4FBD008219C5 /* StartEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560182A8F4FBD008219C5 /* StartEventView.swift */; };
+		4A8560192A8F4FBD008219C5 /* StartActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8560182A8F4FBD008219C5 /* StartActivityView.swift */; };
 		4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A85601A2A8F4FDA008219C5 /* LifeTime.xcdatamodeld */; };
-		4AC28C732A90678700A88B1A /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C722A90678700A88B1A /* EventView.swift */; };
+		4AC28C732A90678700A88B1A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C722A90678700A88B1A /* ActivityView.swift */; };
 		4AC28C752A909E6C00A88B1A /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C742A909E6C00A88B1A /* RecordView.swift */; };
 		4AC28C772A90A72B00A88B1A /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */; };
-		4AD00FC32A9BE5A300C5CD3C /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FBF2A9BE5A300C5CD3C /* Event+CoreDataClass.swift */; };
-		4AD00FC42A9BE5A300C5CD3C /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FC02A9BE5A300C5CD3C /* Event+CoreDataProperties.swift */; };
+		4AD00FC32A9BE5A300C5CD3C /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FBF2A9BE5A300C5CD3C /* Activity+CoreDataClass.swift */; };
+		4AD00FC42A9BE5A300C5CD3C /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FC02A9BE5A300C5CD3C /* Activity+CoreDataProperties.swift */; };
 		4AD00FC52A9BE5A300C5CD3C /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FC12A9BE5A300C5CD3C /* Category+CoreDataClass.swift */; };
 		4AD00FC62A9BE5A300C5CD3C /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD00FC22A9BE5A300C5CD3C /* Category+CoreDataProperties.swift */; };
 		4AE8B4562B63B6480075FA5B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8B4552B63B6480075FA5B /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A5B66BB2AA3E38400338463 /* CurrentEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventView.swift; sourceTree = "<group>"; };
+		4A5B66BB2AA3E38400338463 /* CurrentActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentActivityView.swift; sourceTree = "<group>"; };
 		4A8560052A8F4F56008219C5 /* LifeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8560082A8F4F56008219C5 /* LifeTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeApp.swift; sourceTree = "<group>"; };
 		4A85600A2A8F4F56008219C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A85600C2A8F4F57008219C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A85600F2A8F4F57008219C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A8560162A8F4FA9008219C5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		4A8560182A8F4FBD008219C5 /* StartEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEventView.swift; sourceTree = "<group>"; };
+		4A8560182A8F4FBD008219C5 /* StartActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartActivityView.swift; sourceTree = "<group>"; };
 		4A85601B2A8F4FDA008219C5 /* LifeTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifeTime.xcdatamodel; sourceTree = "<group>"; };
 		4AB41BC12AA3E12900A59FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4AC28C722A90678700A88B1A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		4AC28C722A90678700A88B1A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		4AC28C742A909E6C00A88B1A /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
-		4AD00FBF2A9BE5A300C5CD3C /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "../Event+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4AD00FC02A9BE5A300C5CD3C /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "../Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4AD00FBF2A9BE5A300C5CD3C /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Activity+CoreDataClass.swift"; path = "../Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4AD00FC02A9BE5A300C5CD3C /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Activity+CoreDataProperties.swift"; path = "../Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4AD00FC12A9BE5A300C5CD3C /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "../Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4AD00FC22A9BE5A300C5CD3C /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4AE8B4552B63B6480075FA5B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		4AC28C7E2A90FA6D00A88B1A /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				4AD00FBF2A9BE5A300C5CD3C /* Event+CoreDataClass.swift */,
-				4AD00FC02A9BE5A300C5CD3C /* Event+CoreDataProperties.swift */,
+				4AD00FBF2A9BE5A300C5CD3C /* Activity+CoreDataClass.swift */,
+				4AD00FC02A9BE5A300C5CD3C /* Activity+CoreDataProperties.swift */,
 				4AD00FC12A9BE5A300C5CD3C /* Category+CoreDataClass.swift */,
 				4AD00FC22A9BE5A300C5CD3C /* Category+CoreDataProperties.swift */,
 				4A85601A2A8F4FDA008219C5 /* LifeTime.xcdatamodeld */,
@@ -113,9 +113,9 @@
 				4A85600A2A8F4F56008219C5 /* ContentView.swift */,
 				4AC28C742A909E6C00A88B1A /* RecordView.swift */,
 				4AE8B4552B63B6480075FA5B /* CategoryView.swift */,
-				4A5B66BB2AA3E38400338463 /* CurrentEventView.swift */,
-				4AC28C722A90678700A88B1A /* EventView.swift */,
-				4A8560182A8F4FBD008219C5 /* StartEventView.swift */,
+				4A5B66BB2AA3E38400338463 /* CurrentActivityView.swift */,
+				4AC28C722A90678700A88B1A /* ActivityView.swift */,
+				4A8560182A8F4FBD008219C5 /* StartActivityView.swift */,
 				4AC28C762A90A72B00A88B1A /* AnalyzeView.swift */,
 			);
 			path = Views;
@@ -203,15 +203,15 @@
 				4A8560172A8F4FA9008219C5 /* DataController.swift in Sources */,
 				4A8560092A8F4F56008219C5 /* LifeTimeApp.swift in Sources */,
 				4AC28C772A90A72B00A88B1A /* AnalyzeView.swift in Sources */,
-				4AD00FC32A9BE5A300C5CD3C /* Event+CoreDataClass.swift in Sources */,
+				4AD00FC32A9BE5A300C5CD3C /* Activity+CoreDataClass.swift in Sources */,
 				4AC28C752A909E6C00A88B1A /* RecordView.swift in Sources */,
-				4AC28C732A90678700A88B1A /* EventView.swift in Sources */,
-				4AD00FC42A9BE5A300C5CD3C /* Event+CoreDataProperties.swift in Sources */,
+				4AC28C732A90678700A88B1A /* ActivityView.swift in Sources */,
+				4AD00FC42A9BE5A300C5CD3C /* Activity+CoreDataProperties.swift in Sources */,
 				4AE8B4562B63B6480075FA5B /* CategoryView.swift in Sources */,
 				4A85601C2A8F4FDA008219C5 /* LifeTime.xcdatamodeld in Sources */,
 				4AD00FC52A9BE5A300C5CD3C /* Category+CoreDataClass.swift in Sources */,
-				4A5B66BC2AA3E38400338463 /* CurrentEventView.swift in Sources */,
-				4A8560192A8F4FBD008219C5 /* StartEventView.swift in Sources */,
+				4A5B66BC2AA3E38400338463 /* CurrentActivityView.swift in Sources */,
+				4A8560192A8F4FBD008219C5 /* StartActivityView.swift in Sources */,
 				4AD00FC62A9BE5A300C5CD3C /* Category+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

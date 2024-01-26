@@ -17,45 +17,37 @@ struct CurrentActivityView: View {
         if (activities.isEmpty || activities[0].ended == true) {
             // No activity in progress
             Section("Current Activity") {
-                Button(action: plusButtonAction) {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "plus")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                            .padding()
-                            .foregroundColor(.white)
-                        Spacer()
-                    }
-                }
-                .listRowBackground(Color.blue)
+                StartActivityView()
             }
         } else {
             // Activity in progress
             Section("Current Activity") {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(activities[0].category?.wrappedName ?? "Unknown Name (Category DNE)")
-                            .font(.title3)
-                            .bold()
-                        Text(activities[0].hasName ? activities[0].wrappedName : " ")
-                    }
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .trailing) {
+                VStack(spacing: 10) {
+                    // Header
+                    HStack {
+                        Label(activities[0].category?.wrappedName ?? "Unknown category", systemImage: activities[0].category?.wrappedSymbolName ?? "Unknown symbol")
+                            .font(.title)
+                            .fontWeight(.medium)
+                        Spacer()
                         Text(activities[0].wrappedStartDate, style: .timer)
                             .font(.largeTitle)
-                        
+                    }
+                    Divider()
+                        .padding(0)
+                    // Footer
+                    HStack {
+                        if (activities[0].hasName) {
+                            Text(activities[0].wrappedName)
+                        }
+                        Spacer()
                         HStack(spacing: 0) {
                             Text("Started at ")
                             Text(activities[0].wrappedStartDate, style: .time)
                         }
                     }
                 }
-            }
-            
-            Section {
+                
+                // End button
                 Button {
                     activities[0].ended = true
                     activities[0].endDate = Date()
@@ -67,9 +59,9 @@ struct CurrentActivityView: View {
                 } label: {
                     HStack {
                         Spacer()
-                        Image(systemName: "xmark")
+                        Label("Stop Activity", systemImage: "stop.circle.fill")
+                            .foregroundStyle(.white)
                             .fontWeight(.semibold)
-                            .foregroundColor(.white)
                         Spacer()
                     }
                 }

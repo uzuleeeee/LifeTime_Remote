@@ -19,41 +19,34 @@ struct StartActivityView: View {
     @State private var endDate: Date = Date()
 
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    Picker("Category", selection: $selectedCategory) {
-                        ForEach(categories) { category in
-                            Text(category.wrappedName)
-                                .tag(Optional(category))
-                        }
-                        .onAppear {
-                            selectedCategory = categories[0]
-                        }
-                    }
-                    TextField("Name of activity", text: $name)
+        Group {
+            Picker("Category", selection: $selectedCategory) {
+                ForEach(categories) { category in
+                    Text(category.wrappedName)
+                        .tag(Optional(category))
                 }
-                
-                Section {
-                    Button {
-                        DataController().addActivity(name: name, selectedCategory: selectedCategory, context: moc)
-                            
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Spacer()
-                            Image(systemName: "plus")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                            Spacer()
-                        }
-                    }
-                    .disabled(selectedCategory == nil)
-                    .listRowBackground(Color.blue)
+                .onAppear {
+                    selectedCategory = categories[0]
                 }
             }
-            .navigationTitle("New Activity")
-            .navigationBarTitleDisplayMode(.inline)
+            TextField("Name of activity", text: $name)
+            
+            Button {
+                DataController().addActivity(name: name, selectedCategory: selectedCategory, context: moc)
+                name = ""
+                
+                dismiss()
+            } label: {
+                HStack {
+                    Spacer()
+                    Label("Start Activity", systemImage: "play.fill")
+                        .foregroundStyle(.white)
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+            }
+            .disabled(selectedCategory == nil)
+            .listRowBackground(Color.blue)
         }
     }
 }

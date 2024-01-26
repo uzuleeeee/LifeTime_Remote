@@ -18,6 +18,7 @@ extension Category {
 
     @NSManaged public var name: String?
     @NSManaged public var symbolName: String?
+    @NSManaged public var totalTime: Int16
     @NSManaged public var event: NSSet?
 
     public var wrappedName: String {
@@ -36,9 +37,11 @@ extension Category {
         }
     }
     
+    /*
     public var totalTime: Int {
         Int(eventArray.reduce(0, { $0 + $1.wrappedEndDate.timeIntervalSince($1.wrappedStartDate) }))
     }
+     */
 }
 
 // MARK: Generated accessors for event

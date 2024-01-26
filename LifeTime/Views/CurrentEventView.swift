@@ -62,7 +62,7 @@ struct CurrentEventView: View {
                     events[0].category?.totalTime += Int16(Date().timeIntervalSince(events[0].wrappedStartDate))
                     
                     withAnimation {
-                        try? moc.save()
+                        DataController().save(context: moc)
                     }
                 } label: {
                     HStack {

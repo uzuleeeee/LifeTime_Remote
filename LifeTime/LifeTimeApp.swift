@@ -15,6 +15,9 @@ struct LifeTimeApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                .onAppear {
+                    DataController().addDefaultCategories(context: dataController.container.viewContext)
+                }
         }
     }
 }

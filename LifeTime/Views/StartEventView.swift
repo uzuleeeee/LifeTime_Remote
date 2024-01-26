@@ -36,18 +36,9 @@ struct StartEventView: View {
                 
                 Section {
                     Button {
-                        let newEvent = Event(context: moc)
-                        newEvent.id = UUID()
-                        newEvent.category = selectedCategory
-                        newEvent.category?.name = selectedCategory?.wrappedName
-                        newEvent.name = name
-                        newEvent.startDate = Date()
-                        newEvent.endDate = Date()
-                        
-                        if moc.hasChanges {
-                            try? moc.save()
-                            dismiss()
-                        }
+                        DataController().addEvent(name: name, selectedCategory: selectedCategory, context: moc)
+                            
+                        dismiss()
                     } label: {
                         HStack {
                             Spacer()

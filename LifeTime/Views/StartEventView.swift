@@ -38,7 +38,7 @@ struct StartEventView: View {
                     Button {
                         let newEvent = Event(context: moc)
                         newEvent.id = UUID()
-                        newEvent.category = Category(context: moc)
+                        newEvent.category = selectedCategory
                         newEvent.category?.name = selectedCategory?.wrappedName
                         newEvent.name = name
                         newEvent.startDate = Date()

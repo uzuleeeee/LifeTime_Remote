@@ -59,11 +59,10 @@ struct CurrentEventView: View {
                 Button {
                     events[0].ended = true
                     events[0].endDate = Date()
+                    events[0].category?.totalTime += Int16(Date().timeIntervalSince(events[0].wrappedStartDate))
                     
                     withAnimation {
-                        if moc.hasChanges {
-                            try? moc.save()
-                        }
+                        try? moc.save()
                     }
                 } label: {
                     HStack {

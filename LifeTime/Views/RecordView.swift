@@ -21,6 +21,7 @@ struct RecordView: View {
             .sheet(isPresented: $isShowingStartEventView) {
                 StartEventView()
             }
+            /*
             .onAppear {
                 let sleep = Category(context: moc)
                 sleep.name = "Sleep"
@@ -66,6 +67,7 @@ struct RecordView: View {
                     try? moc.save()
                 }
             }
+             */
         }
     }
     

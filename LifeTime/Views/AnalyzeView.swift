@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct AnalyzeView: View {
     @Environment(\.managedObjectContext) var moc
@@ -14,6 +15,25 @@ struct AnalyzeView: View {
     
     var body: some View {
         Form {
+            Chart {
+                ForEach(categories) { category in
+                    BarMark(
+                        x: .value("Time", category.eventArray.reduce(0, { $0 + $1.wrappedEndDate.timeIntervalSince($1.wrappedStartDate) })),
+                        y: .value("Name", category.wrappedName)
+                    )
+                    .annotation(position: .trailing) {
+                        Text("\(category.eventArray.reduce(0, { $0 + $1.wrappedEndDate.timeIntervalSince($1.wrappedStartDate) }))")
+                    }
+                }
+            }
+            .chartXAxis(.hidden)
+            .chartYAxis {
+                AxisMarks { _ in
+                    AxisValueLabel()
+                }
+            }
+            
+            /*
             List {
                 ForEach(categories) { category in
                     Section(category.wrappedName) {
@@ -33,12 +53,15 @@ struct AnalyzeView: View {
                  }
                  */
             }
+             */
         }
+        /*
         .onAppear {
             if moc.hasChanges {
                 try? moc.save()
             }
         }
+         */
     }
 }
 

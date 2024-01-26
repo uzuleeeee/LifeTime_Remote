@@ -18,11 +18,11 @@ struct AnalyzeView: View {
             Chart {
                 ForEach(categories) { category in
                     BarMark(
-                        x: .value("Time", category.eventArray.reduce(0, { $0 + $1.wrappedEndDate.timeIntervalSince($1.wrappedStartDate) })),
+                        x: .value("Time", category.totalTime),
                         y: .value("Name", category.wrappedName)
                     )
                     .annotation(position: .trailing) {
-                        Text("\(category.eventArray.reduce(0, { $0 + $1.wrappedEndDate.timeIntervalSince($1.wrappedStartDate) }))")
+                        Text("\(category.totalTime)")
                     }
                 }
             }

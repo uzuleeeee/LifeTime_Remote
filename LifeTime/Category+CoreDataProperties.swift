@@ -17,10 +17,15 @@ extension Category {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var symbolName: String?
     @NSManaged public var event: NSSet?
 
     public var wrappedName: String {
         name ?? "Unknown Name"
+    }
+    
+    public var wrappedSymbolName: String {
+        symbolName ?? "Unknown Symbol"
     }
     
     public var eventArray: [Event] {
@@ -29,6 +34,10 @@ extension Category {
         return set.sorted {
             $0.wrappedStartDate < $1.wrappedStartDate
         }
+    }
+    
+    public var totalTime: Int {
+        Int(eventArray.reduce(0, { $0 + $1.wrappedEndDate.timeIntervalSince($1.wrappedStartDate) }))
     }
 }
 

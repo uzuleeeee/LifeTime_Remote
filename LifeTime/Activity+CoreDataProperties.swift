@@ -39,6 +39,10 @@ extension Activity {
         wrappedName.count != 0
     }
     
+    public var hasEnded: Bool {
+        return wrappedEndDate.timeIntervalSince(wrappedStartDate) != 0
+    }
+    
     public var durationInSeconds: Int32 {
         Int32(wrappedEndDate.timeIntervalSince(wrappedStartDate))
     }

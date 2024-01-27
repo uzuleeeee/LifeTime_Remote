@@ -22,22 +22,7 @@ struct AnalyzeView: View {
                         y: .value("Name", category.wrappedName)
                     )
                     .annotation(position: .trailing) {
-                        switch category.totalTime {
-                        case 0:
-                            Text("")
-                        case 1...60:
-                            Text("\(category.totalTime)s")
-                        case 61...3600:
-                            Text("\(category.totalTime / 60)m")
-                        case 3601...86400:
-                            Text("\(category.totalTime / 3600)h")
-                        case 86401...2628000:
-                            Text("\(category.totalTime / 86400)d")
-                        case 2628001...31540000:
-                            Text("\(category.totalTime / 2628000)m")
-                        default:
-                            Text("\(category.totalTime / 31540000)y")
-                        }
+                        Text(formatSeconds(seconds: category.totalTime))
                         Text("\(category.totalTime == 0 ? "" : String(category.totalTime))")
                     }
                     .foregroundStyle(Color.blue.gradient)

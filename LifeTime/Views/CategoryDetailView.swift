@@ -9,28 +9,46 @@ import SwiftUI
 
 struct CategoryDetailView: View {
     @State var category: Category
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) private var activities: FetchedResults<Activity>
+    @FetchRequest private var activities: FetchedResults<Activity>
+
+    init(category: Category) {
+        self._category = State(initialValue: category)
+        _activities = FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)],
+                                   predicate: NSPredicate(format: "category.name == %@", category.wrappedName))
+    }
     
     var body: some View {
         List {
-            ForEach(activities) { activity in
-                VStack(alignment: .leading) {
-                    if (activity.hasName) {
-                        Text(activity.name ?? "Unknonw activity")
-                            .font(.headline)
-                            .fontWeight(.medium)
-                    }
-                    HStack {
-                        Text(String(activity.durationInSeconds))
-                        Spacer()
-                        VStack(alignment: .trailing) {
-                            HStack {
-                                Text("From: ")
-                                Text(activity.wrappedStartDate, style: .time)
+            if (activities.isEmpty) {
+                Text("No data to show")
+                    .foregroundColor(.gray)
+            } else {
+                ForEach(activities) { activity in
+                    if (activity.ended) {
+                        VStack(alignment: .leading) {
+                            if (activity.hasName) {
+                                Text(activity.name ?? "Unknown activity")
+                                    .font(.caption)
+                                    .fontWeight(.medium)
                             }
                             HStack {
-                                Text("To: ")
-                                Text(activity.wrappedEndDate, style: .time)
+                                // Duration
+                                Text(formatSeconds(seconds: activity.durationInSeconds))
+                                    .font(.title)
+                                    .fontWeight(.medium)
+                                Spacer()
+                                // From ... To ...
+                                VStack(alignment: .trailing) {
+                                    HStack {
+                                        Text("To: ")
+                                        Text(activity.wrappedEndDate, style: .time)
+                                    }
+                                    HStack {
+                                        Text("From: ")
+                                        Text(activity.wrappedStartDate, style: .time)
+                                    }
+                                    
+                                }
                             }
                         }
                     }

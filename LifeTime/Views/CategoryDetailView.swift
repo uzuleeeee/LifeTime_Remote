@@ -49,15 +49,15 @@ struct CategoryDetailView: View {
                                 }
                                 Spacer()
                                 VStack(alignment: .trailing) {
-                                    // To:
-                                    HStack {
-                                        Text("To: ")
-                                        Text(activity.wrappedEndDate, style: .time)
-                                    }
                                     // From:
                                     HStack {
                                         Text("From: ")
                                         Text(activity.wrappedStartDate, style: .time)
+                                    }
+                                    // To:
+                                    HStack {
+                                        Text("To: ")
+                                        Text(activity.wrappedEndDate, style: .time)
                                     }
                                 }
                             }

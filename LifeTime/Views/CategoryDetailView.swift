@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CategoryDetailView: View {
-    @State var category: Category
+    @Environment(\.managedObjectContext) var moc
     @FetchRequest private var activities: FetchedResults<Activity>
+    @State var category: Category
 
     init(category: Category) {
         self._category = State(initialValue: category)
@@ -78,9 +79,23 @@ struct CategoryDetailView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteActivity)
             }
         }
         .navigationTitle(category.wrappedName)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                EditButton()
+            }
+        }
+    }
+    
+    private func deleteActivity(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { activities[$0] }.forEach(moc.delete)
+            
+            DataController().save(context: moc)
+        }
     }
 }

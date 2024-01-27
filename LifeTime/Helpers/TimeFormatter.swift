@@ -7,6 +7,10 @@
 
 import Foundation
 
+func durationInSeconds(startDate: Date, endDate: Date) -> Int32 {
+    return Int32(endDate.timeIntervalSince(startDate))
+}
+
 func getSeconds(seconds: Int32) -> Int32 {
     return seconds % 60
 }

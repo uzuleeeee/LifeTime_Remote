@@ -81,6 +81,74 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
+    /*
+    func editActivity(activity: Activity, name: String, selectedCategory: Category?, startDate: Date, endDate: Date, context: NSManagedObjectContext) -> Bool {
+        // Check for overlap
+        let originalStartDate = activity.startDate
+        let originalEndDate = activity.endDate
+        activity.startDate = startDate
+        activity.endDate = endDate
+        
+        save(context: context)
+        
+        @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var activities: FetchedResults<Activity>
+        
+        let index = activities.firstIndex(of: activity) ?? 0
+        let lastIndex = activities.count - 1
+        var isOverlapping = false
+        
+        if (index > 0 && index < lastIndex) {
+            // In between
+            
+            // Check left
+            if (durationInSeconds(startDate: activities[index-1].wrappedEndDate, endDate: startDate) < 0) {
+                isOverlapping = true
+            }
+            // Check right
+            if (durationInSeconds(startDate: endDate, endDate: activities[index+1].wrappedStartDate) < 0) {
+                isOverlapping = true
+            }
+        } else if (index == 0) {
+            // No smaller
+            
+            // Check right
+            if (durationInSeconds(startDate: endDate, endDate: activities[index+1].wrappedStartDate) < 0) {
+                isOverlapping = true
+            }
+        } else if (index == lastIndex) {
+            // No larger
+            
+            // Check left
+            if (durationInSeconds(startDate: activities[index-1].wrappedEndDate, endDate: startDate) < 0) {
+                isOverlapping = true
+            }
+        }
+        
+        if (isOverlapping) {
+            print("Is overlapping. Reverting changes.")
+            activity.startDate = originalStartDate
+            activity.endDate = originalEndDate
+            
+            save(context: context)
+            
+            return false
+        }
+        
+        activity.category?.totalTime -= activity.durationInSeconds
+        
+        activity.name = name
+        activity.category = selectedCategory
+        activity.startDate = startDate
+        activity.endDate = endDate
+        
+        activity.category?.totalTime += Int32(activity.wrappedEndDate.timeIntervalSince(activity.wrappedStartDate))
+        
+        save(context: context)
+        
+        return true
+    }
+    */
+    
     func editActivity(activity: Activity, name: String, selectedCategory: Category?, startDate: Date, endDate: Date, context: NSManagedObjectContext) {
         activity.category?.totalTime -= activity.durationInSeconds
         

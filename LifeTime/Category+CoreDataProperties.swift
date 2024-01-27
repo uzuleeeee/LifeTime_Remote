@@ -29,6 +29,7 @@ extension Category {
         symbolName ?? "Unknown Symbol"
     }
     
+    /*
     public var activityArray: [Activity] {
         let set = activity as? Set<Activity> ?? []
         
@@ -36,6 +37,7 @@ extension Category {
             $0.wrappedStartDate < $1.wrappedStartDate
         }
     }
+    */
 }
 
 // MARK: Generated accessors for activity

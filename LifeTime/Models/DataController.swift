@@ -82,10 +82,14 @@ class DataController: ObservableObject {
     }
     
     func editActivity(activity: Activity, name: String, selectedCategory: Category?, startDate: Date, endDate: Date, context: NSManagedObjectContext) {
+        activity.category?.totalTime -= activity.durationInSeconds
+        
         activity.name = name
         activity.category = selectedCategory
         activity.startDate = startDate
         activity.endDate = endDate
+        
+        activity.category?.totalTime += Int32(activity.wrappedEndDate.timeIntervalSince(activity.wrappedStartDate))
         
         save(context: context)
     }

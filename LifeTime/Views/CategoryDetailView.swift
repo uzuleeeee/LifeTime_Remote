@@ -87,12 +87,24 @@ struct CategoryDetailView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteActivity)
             }
         }
         .navigationTitle(category.wrappedName)
         .navigationBarTitleDisplayMode(.inline)
     }
     
+    private func deleteActivity(offset: IndexSet) {
+        withAnimation {
+            offset.map { activities[$0] }.forEach { activity in
+                moc.delete(activity)
+                DataController().deleteActivity(activity: activity, context: moc)
+            }
+            DataController().save(context: moc)
+        }
+    }
+    
+    /*
     private func deleteSelectedItems() {
         withAnimation {
             selectedIndices.map { activities[$0] }.forEach { activity in
@@ -103,4 +115,5 @@ struct CategoryDetailView: View {
             DataController().save(context: moc)
         }
     }
+    */
 }

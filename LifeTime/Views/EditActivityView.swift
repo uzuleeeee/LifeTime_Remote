@@ -21,7 +21,11 @@ struct EditActivityView: View {
     @Environment(\.dismiss) private var dismiss
     
     private var disableEdit: Bool {
-        selectedCategory == nil || endDate.timeIntervalSince(startDate) < 0
+        if (activity.ended) {
+            selectedCategory == nil || endDate.timeIntervalSince(startDate) < 0
+        } else {
+            selectedCategory == nil || Date().timeIntervalSince(startDate) < 0
+        }
     }
     
     var body: some View {

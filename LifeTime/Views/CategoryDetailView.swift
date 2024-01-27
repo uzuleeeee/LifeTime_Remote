@@ -29,55 +29,53 @@ struct CategoryDetailView: View {
                 ForEach(activities) { activity in
                     // Activity ended
                     if (activity.ended) {
-                        VStack(alignment: .leading) {
-                            // Name
-                            if (activity.hasName) {
-                                Text(activity.name ?? "Unknown activity")
-                                    .font(.caption)
-                                    .fontWeight(.regular)
-                            }
-                            // Time
-                            HStack {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                // Name
+                                if (activity.hasName) {
+                                    Text(activity.name ?? "Unknown activity")
+                                        .font(.caption)
+                                        .fontWeight(.regular)
+                                }
                                 // Duration
                                 Text(formatSeconds(seconds: activity.durationInSeconds))
                                     .font(.title)
                                     .fontWeight(.medium)
-                                Spacer()
-                                // From ... To ...
-                                VStack(alignment: .trailing) {
-                                    HStack {
-                                        Text("To: ")
-                                        Text(activity.wrappedEndDate, style: .time)
-                                    }
-                                    HStack {
-                                        Text("From: ")
-                                        Text(activity.wrappedStartDate, style: .time)
-                                    }
-                                    
+                            }
+                            Spacer()
+                            VStack(alignment: .trailing) {
+                                // To:
+                                HStack {
+                                    Text("To: ")
+                                    Text(activity.wrappedEndDate, style: .time)
+                                }
+                                // From:
+                                HStack {
+                                    Text("From: ")
+                                    Text(activity.wrappedStartDate, style: .time)
                                 }
                             }
                         }
-                    } else {
-                        // Activity in progress 
-                        VStack(alignment: .leading) {
-                            // Name
-                            if (activity.hasName) {
-                                Text(activity.name ?? "Unknown activity")
-                                    .font(.caption)
-                                    .fontWeight(.regular)
-                            }
-                            HStack {
+                    } else { // Activity in progress
+                        HStack {
+                            VStack(alignment: .leading) {
+                                // Name
+                                if (activity.hasName) {
+                                    Text(activity.name ?? "Unknown activity")
+                                        .font(.caption)
+                                        .fontWeight(.regular)
+                                }
                                 // In progress text
                                 Text("In progress")
                                     .font(.title3)
                                     .fontWeight(.medium)
-                                Spacer()
-                                // From ... To ...
-                                VStack(alignment: .trailing) {
-                                    HStack {
-                                        Text("From: ")
-                                        Text(activity.wrappedStartDate, style: .time)
-                                    }
+                            }
+                            Spacer()
+                            VStack(alignment: .trailing) {
+                                // From:
+                                HStack {
+                                    Text("From: ")
+                                    Text(activity.wrappedStartDate, style: .time)
                                 }
                             }
                         }

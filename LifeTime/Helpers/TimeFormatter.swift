@@ -7,6 +7,10 @@
 
 import Foundation
 
+func getSeconds(seconds: Int32) -> Int32 {
+    return seconds % 60
+}
+
 func getMinutes(seconds: Int32) -> Int32 {
     return (seconds % 3600) / 60
 }
@@ -34,7 +38,7 @@ func formatSeconds(seconds: Int32) -> String {
     case 1...60:
         return "\(seconds)s"
     case 61...3600:
-        return "\(getMinutes(seconds: seconds))m"
+        return "\(getMinutes(seconds: seconds))m \(getSeconds(seconds: seconds))s"
     case 3601...86400:
         return "\(getHours(seconds: seconds))h \(getMinutes(seconds: seconds))m"
     case 86401...2628000:

@@ -26,11 +26,13 @@ struct CategoryDetailView: View {
                 ForEach(activities) { activity in
                     if (activity.ended) {
                         VStack(alignment: .leading) {
+                            // Name
                             if (activity.hasName) {
                                 Text(activity.name ?? "Unknown activity")
                                     .font(.caption)
                                     .fontWeight(.medium)
                             }
+                            // Time
                             HStack {
                                 // Duration
                                 Text(formatSeconds(seconds: activity.durationInSeconds))
@@ -48,6 +50,29 @@ struct CategoryDetailView: View {
                                         Text(activity.wrappedStartDate, style: .time)
                                     }
                                     
+                                }
+                            }
+                        }
+                    } else {
+                        VStack(alignment: .leading) {
+                            // Name
+                            if (activity.hasName) {
+                                Text(activity.name ?? "Unknown activity")
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                            }
+                            HStack {
+                                // In progress text
+                                Text("In progress")
+                                    .font(.title3)
+                                    .fontWeight(.medium)
+                                Spacer()
+                                // From ... To ...
+                                VStack(alignment: .trailing) {
+                                    HStack {
+                                        Text("From: ")
+                                        Text(activity.wrappedStartDate, style: .time)
+                                    }
                                 }
                             }
                         }

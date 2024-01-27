@@ -38,6 +38,10 @@ extension Activity {
     public var hasName: Bool {
         wrappedName.count != 0
     }
+    
+    public var durationInSeconds: Int32 {
+        Int32(wrappedEndDate.timeIntervalSince(wrappedStartDate))
+    }
 }
 
 extension Activity : Identifiable {

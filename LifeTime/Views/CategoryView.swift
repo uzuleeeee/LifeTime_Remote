@@ -18,8 +18,12 @@ struct CategoryView: View {
         Section("Categories") {
             List {
                 ForEach(categories) { category in
-                    VStack {
-                        Label(category.wrappedName, systemImage: category.wrappedSymbolName)
+                    NavigationLink {
+                        CategoryDetailView(category: category)
+                    } label: {
+                        VStack {
+                            Label(category.wrappedName, systemImage: category.wrappedSymbolName)
+                        }
                     }
                 }
             }

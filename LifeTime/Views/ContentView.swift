@@ -12,10 +12,12 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            RecordView()
-                .tabItem {
-                    Label("Record", systemImage: "timer")
-                }
+            NavigationView {
+                RecordView()
+            }
+            .tabItem {
+                Label("Record", systemImage: "timer")
+            }
             AnalyzeView()
                 .tabItem {
                     Label("Analyze", systemImage: "chart.line.uptrend.xyaxis")

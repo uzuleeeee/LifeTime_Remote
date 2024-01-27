@@ -20,18 +20,21 @@ struct CategoryDetailView: View {
     
     var body: some View {
         List {
+            // No data
             if (activities.isEmpty) {
                 Text("No data to show")
                     .foregroundColor(.gray)
             } else {
+                // Has data
                 ForEach(activities) { activity in
+                    // Activity ended
                     if (activity.ended) {
                         VStack(alignment: .leading) {
                             // Name
                             if (activity.hasName) {
                                 Text(activity.name ?? "Unknown activity")
                                     .font(.caption)
-                                    .fontWeight(.medium)
+                                    .fontWeight(.regular)
                             }
                             // Time
                             HStack {
@@ -55,12 +58,13 @@ struct CategoryDetailView: View {
                             }
                         }
                     } else {
+                        // Activity in progress 
                         VStack(alignment: .leading) {
                             // Name
                             if (activity.hasName) {
                                 Text(activity.name ?? "Unknown activity")
                                     .font(.caption)
-                                    .fontWeight(.medium)
+                                    .fontWeight(.regular)
                             }
                             HStack {
                                 // In progress text

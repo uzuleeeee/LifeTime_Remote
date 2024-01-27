@@ -80,4 +80,11 @@ class DataController: ObservableObject {
         
         save(context: context)
     }
+    
+    func editActivity(activity: Activity, name: String, selectedCategory: Category?, startDate: Date, endDate: Date, context: NSManagedObjectContext) {
+        activity.name = name
+        activity.category = selectedCategory
+        activity.startDate = startDate
+        activity.endDate = endDate
+    }
 }

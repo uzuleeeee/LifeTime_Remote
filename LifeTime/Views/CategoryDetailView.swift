@@ -11,6 +11,7 @@ struct CategoryDetailView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest private var activities: FetchedResults<Activity>
     @State var category: Category
+    @State private var selectedIndices: IndexSet = []
 
     init(category: Category) {
         self._category = State(initialValue: category)
@@ -27,76 +28,93 @@ struct CategoryDetailView: View {
             } else {
                 // Has data
                 ForEach(activities) { activity in
-                    // Activity ended
-                    if (activity.ended) {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                // Name
-                                if (activity.hasName) {
-                                    Text(activity.name ?? "Unknown activity")
-                                        .font(.caption)
-                                        .fontWeight(.regular)
+                    Group {
+                        // Activity ended
+                        if (activity.ended) {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    // Name
+                                    if (activity.hasName) {
+                                        Text(activity.name ?? "Unknown activity")
+                                            .font(.caption)
+                                            .fontWeight(.regular)
+                                    }
+                                    // Duration
+                                    Text(formatSeconds(seconds: activity.durationInSeconds))
+                                        .font(.title)
+                                        .fontWeight(.medium)
                                 }
-                                // Duration
-                                Text(formatSeconds(seconds: activity.durationInSeconds))
-                                    .font(.title)
-                                    .fontWeight(.medium)
+                                Spacer()
+                                VStack(alignment: .trailing) {
+                                    // To:
+                                    HStack {
+                                        Text("To: ")
+                                        Text(activity.wrappedEndDate, style: .time)
+                                    }
+                                    // From:
+                                    HStack {
+                                        Text("From: ")
+                                        Text(activity.wrappedStartDate, style: .time)
+                                    }
+                                }
                             }
-                            Spacer()
-                            VStack(alignment: .trailing) {
-                                // To:
-                                HStack {
-                                    Text("To: ")
-                                    Text(activity.wrappedEndDate, style: .time)
+                        } else { // Activity in progress
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    // Name
+                                    if (activity.hasName) {
+                                        Text(activity.name ?? "Unknown activity")
+                                            .font(.caption)
+                                            .fontWeight(.regular)
+                                    }
+                                    // In progress text
+                                    Text("In progress")
+                                        .font(.title3)
+                                        .fontWeight(.medium)
                                 }
-                                // From:
-                                HStack {
-                                    Text("From: ")
-                                    Text(activity.wrappedStartDate, style: .time)
-                                }
-                            }
-                        }
-                    } else { // Activity in progress
-                        HStack {
-                            VStack(alignment: .leading) {
-                                // Name
-                                if (activity.hasName) {
-                                    Text(activity.name ?? "Unknown activity")
-                                        .font(.caption)
-                                        .fontWeight(.regular)
-                                }
-                                // In progress text
-                                Text("In progress")
-                                    .font(.title3)
-                                    .fontWeight(.medium)
-                            }
-                            Spacer()
-                            VStack(alignment: .trailing) {
-                                // From:
-                                HStack {
-                                    Text("From: ")
-                                    Text(activity.wrappedStartDate, style: .time)
+                                Spacer()
+                                VStack(alignment: .trailing) {
+                                    // From:
+                                    HStack {
+                                        Text("From: ")
+                                        Text(activity.wrappedStartDate, style: .time)
+                                    }
                                 }
                             }
                         }
                     }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            if let index = activities.firstIndex(of: activity) {
+                                selectedIndices.insert(index)
+                                print("Swiped Index: \(index)")
+                                deleteSelectedItems()
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash.fill")
+                        }
+                        
+                        Button {
+                            
+                        } label: {
+                            Label("Edit", systemImage: "pencil")
+                                .bold()
+                        }
+                        .tint(.yellow)
+                    }
                 }
-                .onDelete(perform: deleteActivity)
             }
         }
         .navigationTitle(category.wrappedName)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                EditButton()
-            }
-        }
     }
     
-    private func deleteActivity(offsets: IndexSet) {
+    private func deleteSelectedItems() {
         withAnimation {
-            offsets.map { activities[$0] }.forEach(moc.delete)
-            
+            selectedIndices.map { activities[$0] }.forEach { activity in
+                moc.delete(activity)
+                DataController().deleteActivity(activity: activity, context: moc)
+            }
             DataController().save(context: moc)
         }
     }

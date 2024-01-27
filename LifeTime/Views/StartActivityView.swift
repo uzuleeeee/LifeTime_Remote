@@ -11,8 +11,6 @@ struct StartActivityView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var categories: FetchedResults<Category>
     
-    @Environment(\.dismiss) var dismiss
-    
     @State private var selectedCategory: Category?
     @State private var name: String = ""
     @State private var startDate: Date = Date()
@@ -34,8 +32,6 @@ struct StartActivityView: View {
             Button {
                 DataController().addActivity(name: name, selectedCategory: selectedCategory, context: moc)
                 name = ""
-                
-                dismiss()
             } label: {
                 HStack {
                     Spacer()

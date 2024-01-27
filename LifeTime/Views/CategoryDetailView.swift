@@ -12,7 +12,8 @@ struct CategoryDetailView: View {
     @FetchRequest private var activities: FetchedResults<Activity>
     @State var category: Category
     @State private var selectedIndices: IndexSet = []
-
+    @State private var isShowingEditActivityView = false
+    
     init(category: Category) {
         self._category = State(initialValue: category)
         _activities = FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)],
@@ -28,7 +29,9 @@ struct CategoryDetailView: View {
             } else {
                 // Has data
                 ForEach(activities) { activity in
-                    Group {
+                    NavigationLink {
+                        EditActivityView(activity: activity)
+                    } label: {
                         // Activity ended
                         if (activity.ended) {
                             HStack {
@@ -83,25 +86,6 @@ struct CategoryDetailView: View {
                             }
                         }
                     }
-                    .swipeActions {
-                        Button(role: .destructive) {
-                            if let index = activities.firstIndex(of: activity) {
-                                selectedIndices.insert(index)
-                                print("Swiped Index: \(index)")
-                                deleteSelectedItems()
-                            }
-                        } label: {
-                            Label("Delete", systemImage: "trash.fill")
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            Label("Edit", systemImage: "pencil")
-                                .bold()
-                        }
-                        .tint(.yellow)
-                    }
                 }
             }
         }
@@ -112,6 +96,7 @@ struct CategoryDetailView: View {
     private func deleteSelectedItems() {
         withAnimation {
             selectedIndices.map { activities[$0] }.forEach { activity in
+                print(activity.name)
                 moc.delete(activity)
                 DataController().deleteActivity(activity: activity, context: moc)
             }

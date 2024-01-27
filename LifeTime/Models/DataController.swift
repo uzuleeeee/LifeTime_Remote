@@ -86,9 +86,13 @@ class DataController: ObservableObject {
         activity.category = selectedCategory
         activity.startDate = startDate
         activity.endDate = endDate
+        
+        save(context: context)
     }
     
     func deleteActivity(activity: Activity, context: NSManagedObjectContext) {
         activity.category?.totalTime -= Int32(activity.wrappedEndDate.timeIntervalSince(activity.wrappedStartDate))
+        
+        save(context: context)
     }
 }

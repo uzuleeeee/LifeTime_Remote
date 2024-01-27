@@ -29,8 +29,10 @@ struct AnalyzeView: View {
                             Text("\(category.totalTime)s")
                         case 61...3600:
                             Text("\(category.totalTime / 60)m")
-                        case 3601...2628000:
-                            Text("\(category.totalTime / 3600)d")
+                        case 3601...86400:
+                            Text("\(category.totalTime / 3600)h")
+                        case 86401...2628000:
+                            Text("\(category.totalTime / 86400)d")
                         case 2628001...31540000:
                             Text("\(category.totalTime / 2628000)m")
                         default:
